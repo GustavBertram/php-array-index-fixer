@@ -1,10 +1,11 @@
 <?php
 
 /**
- * PHP Array Index Fixer
+ * php-array-index-fixer
+ * =====================
  *
- * This file parses a PHP source file and replaces unquoted 
- * array indexes.
+ * This script parses a PHP source file and replaces unquoted 
+ * array indexes with single-quoted array indexes.
  *
  * It will fix the following:
  *  $a[b] = 'c';
@@ -15,11 +16,35 @@
  *  $d = $e[$f->g];
  *
  * It was meant to be invoked as follows:
+ *  php aif.php <source_file>
+ *
+ * On a Linux machine, the following commandline script
+ * will invoke aif.php on all PHP source files in a
+ * directory, including subfolders:
  *
  * find . -type f -iname '*.php' -exec php aif.php {} \;
  *
- * @author     Author <gustav.bertram@gmail.com>
+ * License
+ * =======
+ * 
+ * Copyright 2012 Gustav Bertram
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * @author     Gustav Bertram <gustav.bertram@gmail.com>
  * @copyright  2012 Gustav Bertram
+ * @license    http://www.gnu.org/licenses/gpl.html GNU Public License Version 3
  * @version    1.0
  */
 
