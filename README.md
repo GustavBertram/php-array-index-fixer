@@ -5,22 +5,26 @@ This script parses a PHP source file and replaces unquoted
 array indexes with single-quoted array indexes.
 
 It will fix the following:
+```php
  $a[b] = 'c';
+```
 
 While not breaking the following:
- $b = "$a[b]";
- $c = " \"$a[b]\" ";
- $d = $e[$f->g];
+```php
+$b = "$a[b]";
+$c = " \"$a[b]\" ";
+$d = $e[$f->g];
+```
 
 It was meant to be invoked as follows:
 
- php aif.php <source_file>
+`php aif.php <source_file>`
 
-On a Linux machine, the following commandline script
+On Linux or Cygwin, the following commandline script
 will invoke aif.php on all PHP source files in a
 directory, including subfolders:
 
- find . -type f -iname '*.php' -exec php aif.php {} \;
+`find . -type f -iname '*.php' -exec php aif.php {} \;`
 
 License
 =======
